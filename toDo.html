@@ -27,7 +27,7 @@
 				</button>
 			</div>
 			<div class="side-bar">
-				<ul class="side-bar-list">
+				<ul class="side-bar-list" id="side-list">
 					<li class="list-container">
 						<span class="icon"><i class="fa fa-sun-o"></i></span>
             			<span class="text">My Day</span>
@@ -48,7 +48,7 @@
 						<span class="icon"><i class='fa fa-flag-o'></i></span>
             			<span class="text">Flagged email</span>
 					</li>
-					<li class="list-container">
+					<li class="list-containers">
 						<span class="icon"><i class='fa fa-home'></i></span>
             			<span class="text">Tasks</span>
 					</li>
@@ -56,7 +56,7 @@
 			</div>
 			<div class="side-bar-addlist">
 				<div class="list-button">
-					<button class="add-list-button">&#x2B;</button><input type="text" class="new-list" placeholder="New list">
+					<button class="add-list-button">&#x2B;</button><input type="text" id="new-list" class="new-list" placeholder="New list">
 				</div><div class="group-button">
 					<button class="add-group-button"><i class="fa fa-plus-circle"></i></button>
 				</div>
@@ -85,7 +85,7 @@
 						<i class="fa fa-lightbulb-o"></i>suggestion</button>
 				</div>
 				</div><div class="date-bar">
-						<p>Thursday, December 29</p>
+						<p id="date"></p>
 				</div><div class="add-task-bar">
 					<button class="add-task-button"><i class="fa fa-circle-thin"></i>
 					</button><input type="text" class="add-task" placeholder="Add a task">
@@ -103,4 +103,5 @@
 		<div class="right-column"></div>
 	</div>
 </body>
+<script src="toDoJs.js"></script>
 </html>
