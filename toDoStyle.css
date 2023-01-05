@@ -121,7 +121,9 @@ body {
 .top-bar .icons i:hover {
 	background: #005a9e;
 }
-
+.left-column1 {
+	display: none;
+}
 .left-column {
 	display: inline-block;
 	width: 23%;
@@ -135,11 +137,12 @@ body {
 }
 
 .left-column .menu .menu-button {
-	width: 83%;
+	width: 8%;
 	height: 30%;
 	margin-top: 12%;
 	margin-left: 9%;
 	text-align: left;
+	cursor:pointer;
 	background: white;
 }
 
@@ -149,10 +152,13 @@ body {
 	color: #5e5e5d;
 }
 
+.left-column .task-bar-list {
+	width: 100%;
+	height: 80%;
+}
 .left-column .side-bar {
 	width: 100%;
-	height: 47%;
-	background: white;
+	max-height: 90%;
 	overflow: hidden;
 	overflow-y: scroll;
 }
@@ -161,20 +167,14 @@ body {
 	list-style: none;
 }
 
-.left-column .side-bar .side-bar-list .list-container,
-.list-containers {
+.left-column .side-bar .side-bar-list .list-container {
 	padding-left: 9%;
 	padding-top: 4.5%;
 	padding-bottom: 4.5%;
+	cursor: pointer;
 }
 
-.left-column .side-bar .side-bar-list .list-containers {
-	border-bottom: 1px solid;
-	border-color: #e8e7e5;
-}
-
-.left-column .side-bar .side-bar-list .list-container .icon,
-.left-column .side-bar .side-bar-list .list-containers .icon {
+.left-column .side-bar .side-bar-list .list-container .icon {
 	display: inline-block;
 	width: 12%;
 	color: #554c48;
@@ -182,16 +182,14 @@ body {
 	font-size: medium;
 }
 
-.left-column .side-bar .side-bar-list .list-container .text,
-.left-column .side-bar .side-bar-list .list-containers .text {
+.left-column .side-bar .side-bar-list .list-container .text {
 	font-weight: 400;
 	font-size: 90%;
 	color: #554c48;
 	font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.left-column .side-bar .side-bar-list .list-container:hover,
-.left-column .side-bar .side-bar-list .list-containers:hover {
+.left-column .side-bar .side-bar-list .list-container:hover {
 	background: #f5f5f5;
 }
 
@@ -202,19 +200,19 @@ body {
 	color: black;
 }
 
-.side-bar-addlist {
+.left-column .side-bar-addlist {
 	width: 100%;
 	height: 8%;
 	margin-top: 2%;
 }
 
-.side-bar-addlist .list-button {
+.left-column .side-bar-addlist .list-button {
 	width: 80%;
 	height: 100%;
 	display: inline-block;
 }
 
-.side-bar-addlist .list-button .add-list-button {
+.left-column .side-bar-addlist .list-button .add-list-button {
 	margin-left: 2%;
 	width: 22%;
 	color: #2564cf;
@@ -236,14 +234,14 @@ body {
 	color: #2564cf;
 }
 
-.side-bar-addlist .group-button {
+.left-column .side-bar-addlist .group-button {
 	width: 20%;
 	vertical-align: top;
 	display: inline-block;
 	height: 100%;
 }
 
-.side-bar-addlist .group-button .add-group-button {
+.group-button .add-group-button {
 	width: 90%;
 	height: 100%;
 	color: #2564cf;
@@ -267,21 +265,19 @@ body {
 	background: #f5f5f5;
 }
 
-.side-bar-footer {
-	margin-top: 20%;
+.left-column .side-bar-footer {
 	width: 100%;
-	height: 18%;
+	height: 7.5%;
 }
 
-.side-bar-footer .footer {
+.left-column .side-bar-footer .footer {
 	display: inline-block;
-	margin-top: 26%;
 	width: 20%;
 	height: 40%;
 	text-align: center;
 }
 
-.side-bar-footer .footer i {
+.left-column .side-bar-footer .footer i {
 	margin-top: 25%;
 }
 
@@ -289,11 +285,19 @@ body {
 	background: #f5f5f5;
 }
 
-.middle-column {
+.middle-column, .middle-column1 {
 	display: inline-block;
 	width: 77%;
 	height: 92%;
 	background: #faf9f8;
+	overflow: hidden;
+	overflow-y: scroll;
+	display: none;
+}
+
+.middle-column1 {
+	width: 100%;
+	height: 100%;
 }
 
 .middle-column .task-bar {
@@ -303,6 +307,11 @@ body {
 	margin-left: 2.5%;
 	margin-right: 2.5%;
 	margin-top: 3%;
+}
+
+.middle-column .task-bar .category-icon {
+	display: inline-block;
+	padding-right: 4%;
 }
 
 .middle-column .task-bar .task-bar-head {
@@ -317,7 +326,7 @@ body {
 
 .middle-column .task-bar .task-bar-head h2 {
 	display: inline-block;
-	width: 30%;
+	width: auto;
 	font-weight: 500;
 }
 
@@ -325,12 +334,14 @@ body {
 	width: 10%;
 	font-size: 150%;
 	font-weight: 500;
+	color: #2f2e2d;
 }
 
 .middle-column .task-bar .task-bar-icon {
 	display: inline-block;
 	font-size: 100%;
 	font-weight: 500;
+	padding-left: 6%;
 }
 
 .middle-column .task-bar .task-bar-button {
@@ -387,25 +398,47 @@ body {
 	font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.middle-column .add-task-bar {
-	width: 95%;
+.middle-column .add-task-bar,
+.middle-column .new-task-bar{
+	max-width: 95%;
 	height: 9%;
 	margin-top: 1.5%;
 	margin-left: 2.5%;
 	margin-right: 2.5%;
-	background: lightcoral;
 	border-bottom: .5px solid;
 	border-color: #e1dfdd;
 	box-shadow: #ecebea;
 }
 
-.middle-column .add-task-bar .add-task-button {
+.middle-column .add-task-bar .add-task-button,
+.middle-column .new-task-bar .check-box-button,
+.middle-column .new-task-bar .important-button{
 	width: 6%;
 	color: #2564cf;
 	background: white;
+	display: inline-block;
 	height: 100%;
 	font-size: 120%;
+	font-weight: 100;
+}
+
+.middle-column .new-task-bar .new-task{
+	width: 88%;
+	color: #2564cf;
+	display: inline-block;
+	background: white;
+	height: 100%;
+	vertical-align: top;
+	font-size: 100%;
 	font-weight: 400;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+.middle-column .new-task-bar .new-task p{
+	padding-top: 1.5%;
 }
 
 .middle-column .add-task-bar .add-task {
@@ -479,4 +512,7 @@ body {
 .right-column {
 	display: inline-block;
 	background: skyblue;
+	width: 28%;
+	height: 92%;
+	float: right;
 }
